@@ -1,0 +1,36 @@
+﻿
+.Header
+{
+    position:absolute;
+    top:2%;
+    left:2%;
+    right:2%;
+    height:23%;
+    text-align:center;
+    background-color:Aqua;
+    width:96%;
+}
+
+.LeftPanel
+{
+    position:absolute;
+    top:25%;
+    left:2%;
+    width:23%;
+    height:73%;
+    bottom:2%;
+    text-align:center;
+    background-color:Orange;
+}
+
+.RightPanel
+{
+    position:absolute;
+    top:25%;
+    height:73%;
+    right:2%;
+    width:73%;
+    bottom:2%;
+    text-align:center;
+    background-color:#784422;
+}
