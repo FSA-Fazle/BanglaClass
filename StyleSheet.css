@@ -9,6 +9,7 @@
     text-align:center;
     background-color:green;
     font-color:red;
+    font-size:40px;
     width:96%;
 }
 
@@ -23,6 +24,7 @@
     text-align:center;
     background-color:Orange;
     font-color:white;
+    font-size:30px;
 }
 
 .RightPanel
@@ -36,4 +38,5 @@
     text-align:center;
     background-color:#784422;
     font-color:white;
+    font-size:20px;
 }
