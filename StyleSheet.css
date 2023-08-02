@@ -8,7 +8,7 @@
     height:23%;
     text-align:center;
     background-color:green;
-    font-color:red
+    font-color:red;
     width:96%;
 }
 
@@ -22,6 +22,7 @@
     bottom:2%;
     text-align:center;
     background-color:Orange;
+    font-color:white;
 }
 
 .RightPanel
@@ -34,4 +35,5 @@
     bottom:2%;
     text-align:center;
     background-color:#784422;
+    font-color:white;
 }
