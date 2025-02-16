@@ -1,1 +1,2 @@
-
+This folder is to publish Issues of Hyphne Magazine,
+until it has its own domain.
