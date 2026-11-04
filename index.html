@@ -1,48 +1,233 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="StyleSheet.css">
-    <title>
-      Bangla Class
-    </title>
-  </head>
-  <body>
-    <p class=Header>
-      <table>
-        <tr>
-          <td style="font-size:40px;font-family:Algerian;color:red;">      
-            Dedicated to the martyrs from all over the world who fought for the love of their mother tongue 
-            and gave their life to achieve the right to speak in their mother tongue.
-          </td>          
-          <td>
-            <a href="https://en.wikipedia.org/wiki/Shaheed_Minar,_Dhaka">
-              <img src="Shaheed_Minar.jpg" alt="Shaheed Minar in Dhaka, Bangaldesh" style="height:150px; width:150px">
-            </a>
-          </td> 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bangla Class</title>
+  <meta name="description" content="Learn Bangla — resources, classes and links for anyone who loves the Bangla language.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #006a4e;
+      --green-dark: #00523c;
+      --green-soft: #e6f2ee;
+      --red: #e0263c;
+      --red-soft: #fdecee;
+      --amber-soft: #fef5e4;
+      --blue: #2563eb;
+      --blue-soft: #e8effd;
+      --ink: #1c2421;
+      --muted: #5b6763;
+      --line: #e3e8e6;
+      --bg: #f6f8f7;
+      --card: #ffffff;
+      --radius: 16px;
+      --shadow: 0 1px 2px rgba(0,0,0,.04), 0 6px 20px rgba(0,40,30,.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Poppins", "Hind Siliguri", system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    .bn { font-family: "Hind Siliguri", "Poppins", sans-serif; }
+    a { color: inherit; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
-        </tr>
-      </table>
-    </p>
-    <p class=LeftPanel>
-      <a href="https://www.un.org/en/observances/mother-language-day">International Mother Language Day <b>21 Febraury</b></a>
-      <br/>
-      <br/>
-      <a href="http://banglaacademy.gov.bd/">Bangla Academy - Bangladesh</a>
-      <br/>
-      <br/>
-      <a href="https://en.wikipedia.org/wiki/Bengali_language">Bengali Language - Wikipedia</a>
-      <br/>
-      <br/>
-      <a href="https://nctb.gov.bd/pages/static-pages/695b97ffc4774958d7b70329">২০২৬ শিক্ষাবর্ষের সকল স্তরের পাঠ্যপুস্তকের তালিকা</a>
-      <br/>
-      <br/>
-      <a href="Brantford.html">Brantford Bangla School</a>
-    </p>
-    <p class=RightPanel>
-      Welcome!
-      Since you are here, I can imagine that you are interested to learn Bangla.
-      I am happy that you are here, becuase I love my mother tongue, and 
-      like to share my knowledge of Bangla with those who wants to learn it.
-      So, buckle up friends!
-    </p>
-  </body>
+    /* Top bar */
+    .topbar { background: var(--card); border-bottom: 1px solid var(--line); }
+    .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; text-decoration: none; }
+    .flag { width: 30px; height: 20px; border-radius: 3px; background: var(--green); position: relative; flex: none; }
+    .flag::after { content: ""; position: absolute; width: 11px; height: 11px; border-radius: 50%; background: var(--red); top: 4.5px; left: 10px; }
+    .nav-link { font-size: .9rem; color: var(--green); text-decoration: none; font-weight: 500; }
+    .nav-link:hover { text-decoration: underline; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      color: #fff;
+      padding: 56px 0 84px;
+    }
+    .hero .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+    .eyebrow { display: inline-block; background: rgba(255,255,255,.15); padding: 4px 12px; border-radius: 999px; font-size: .85rem; letter-spacing: .02em; }
+    .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.4rem); line-height: 1.1; margin: 16px 0 6px; font-weight: 700; }
+    .hero h1 .bn { display: block; font-size: .62em; font-weight: 600; opacity: .9; margin-top: 8px; }
+    .dedication { max-width: 600px; margin: 18px 0 0; padding-left: 16px; border-left: 3px solid var(--red); opacity: .95; font-size: 1.02rem; }
+    .minar { display: block; text-decoration: none; text-align: center; }
+    .minar-frame {
+      width: 220px; height: 220px; border-radius: 50%;
+      background: var(--red); padding: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      transition: transform .2s;
+    }
+    .minar:hover .minar-frame { transform: scale(1.03); }
+    .minar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; background: #fff; }
+    .minar span { display: block; margin-top: 10px; font-size: .82rem; opacity: .85; }
+
+    /* Sections */
+    section { margin: 48px 0; }
+    h2 { font-size: 1.5rem; margin: 0 0 18px; }
+
+    .welcome {
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 28px 32px; margin-top: -48px; position: relative;
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+    .welcome h2 { margin-bottom: 8px; }
+    .welcome p { margin: 0; color: var(--muted); font-size: 1.02rem; }
+    .welcome strong { color: var(--green); }
+
+    .icon { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; flex: none; }
+    .icon svg { width: 22px; height: 22px; }
+
+    /* Featured class */
+    .feature {
+      display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center;
+      background: linear-gradient(120deg, var(--red) 0%, #b81d30 100%);
+      color: #fff; border-radius: var(--radius); padding: 28px 32px; text-decoration: none;
+      box-shadow: 0 10px 28px rgba(224,38,60,.25); transition: transform .15s;
+    }
+    .feature:hover, .feature:focus-visible { transform: translateY(-3px); outline: none; }
+    .feature .label { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; opacity: .85; }
+    .feature h3 { font-size: 1.5rem; margin: 4px 0; }
+    .feature p { margin: 0; opacity: .92; }
+    .feature .btn { background: #fff; color: var(--red); font-weight: 600; padding: 10px 20px; border-radius: 999px; white-space: nowrap; }
+
+    /* Link cards */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 20px; display: flex; flex-direction: column; gap: 12px;
+      text-decoration: none; border: 1px solid transparent;
+      transition: transform .15s, border-color .15s, box-shadow .15s;
+    }
+    .card:hover, .card:focus-visible { transform: translateY(-3px); border-color: var(--green); box-shadow: 0 10px 28px rgba(0,40,30,.12); outline: none; }
+    .card h3 { font-size: 1.02rem; margin: 0; line-height: 1.4; }
+    .card p { margin: 0; color: var(--muted); font-size: .88rem; flex: 1; }
+    .card .cta { color: var(--green); font-weight: 600; font-size: .85rem; }
+
+    .c-red   .icon { background: var(--red-soft);   color: var(--red); }
+    .c-green .icon { background: var(--green-soft); color: var(--green); }
+    .c-blue  .icon { background: var(--blue-soft);  color: var(--blue); }
+    .c-amber .icon { background: var(--amber-soft); color: #b06d00; }
+
+    footer { border-top: 1px solid var(--line); background: var(--card); padding: 28px 0; margin-top: 64px; color: var(--muted); font-size: .9rem; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+    @media (max-width: 720px) {
+      .hero .wrap { grid-template-columns: 1fr; gap: 24px; }
+      .minar { order: -1; justify-self: start; }
+      .minar-frame { width: 140px; height: 140px; padding: 6px; }
+      .welcome { flex-direction: column; padding: 22px; }
+      .feature { grid-template-columns: 1fr; padding: 22px; }
+      .feature .btn { justify-self: start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="flag" aria-hidden="true"></span>Bangla Class</a>
+      <a class="nav-link" href="BrantfordBanglaSchool.html">Brantford Bangla School &rarr;</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">21 February &middot; International Mother Language Day</span>
+        <h1>Learn Bangla
+          <span class="bn">আমার ভাষা, আমার গর্ব</span>
+        </h1>
+        <p class="dedication">
+          Dedicated to the martyrs from all over the world who fought for the love of their mother tongue
+          and gave their lives to achieve the right to speak in their mother tongue.
+        </p>
+      </div>
+      <a class="minar" href="https://en.wikipedia.org/wiki/Shaheed_Minar,_Dhaka" target="_blank" rel="noopener">
+        <div class="minar-frame">
+          <img src="Shaheed_Minar.jpg" alt="Shaheed Minar in Dhaka, Bangladesh">
+        </div>
+        <span>Shaheed Minar, Dhaka</span>
+      </a>
+    </div>
+  </div>
+
+  <main class="wrap">
+
+    <div class="welcome c-green">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+      <div>
+        <h2>Welcome! <span class="bn">স্বাগতম!</span></h2>
+        <p>
+          Since you are here, I can imagine that you are interested in learning Bangla.
+          I am happy that you are here, because I love my mother tongue and
+          like to share my knowledge of Bangla with those who want to learn it.
+          <strong>So, buckle up, friends!</strong>
+        </p>
+      </div>
+    </div>
+
+    <section>
+      <h2>Our Classroom</h2>
+      <a class="feature" href="BrantfordBanglaSchool.html">
+        <div>
+          <div class="label">Bangla classes for kids</div>
+          <h3>Brantford Bangla School</h3>
+          <p>Lessons, books, homework activities and announcements for the kids of Brantford.</p>
+        </div>
+        <span class="btn">Visit the class &rarr;</span>
+      </a>
+    </section>
+
+    <section>
+      <h2>Helpful Links</h2>
+      <div class="grid">
+
+        <a class="card c-red" href="https://www.un.org/en/observances/mother-language-day" target="_blank" rel="noopener">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <h3>International Mother Language Day</h3>
+          <p>Observed every year on <strong>21 February</strong>.</p>
+          <span class="cta">Visit &nearr;</span>
+        </a>
+
+        <a class="card c-green" href="http://banglaacademy.gov.bd/" target="_blank" rel="noopener">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10M19 21V10M9 21v-7M15 21v-7"/><path d="m2 10 10-6 10 6"/></svg></div>
+          <h3>Bangla Academy - Bangladesh</h3>
+          <p>The Bangla Academy website.</p>
+          <span class="cta">Visit &nearr;</span>
+        </a>
+
+        <a class="card c-blue" href="https://en.wikipedia.org/wiki/Bengali_language" target="_blank" rel="noopener">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+          <h3>Bengali Language - Wikipedia</h3>
+          <p>About the Bangla language on Wikipedia.</p>
+          <span class="cta">Visit &nearr;</span>
+        </a>
+
+        <a class="card c-amber" href="https://nctb.gov.bd/pages/static-pages/695b97ffc4774958d7b70329" target="_blank" rel="noopener">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></div>
+          <h3 class="bn">২০২৬ শিক্ষাবর্ষের সকল স্তরের পাঠ্যপুস্তকের তালিকা</h3>
+          <p>2026 textbook list for all levels (NCTB).</p>
+          <span class="cta">Visit &nearr;</span>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Bangla Class &middot; <span class="bn">মাতৃভাষা বাংলা</span></span>
+      <a class="nav-link" href="BrantfordBanglaSchool.html">Brantford Bangla School &rarr;</a>
+    </div>
+  </footer>
+
+</body>
 </html>
