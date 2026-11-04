@@ -34,6 +34,16 @@
       font-family: "Poppins", "Hind Siliguri", system-ui, sans-serif;
       line-height: 1.6;
     }
+    /* Nakshi kantha background at 25% opacity */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: url("noksi.jpg") center / cover no-repeat;
+      opacity: .25;
+      pointer-events: none;
+    }
     .bn { font-family: "Hind Siliguri", "Poppins", sans-serif; }
     a { color: inherit; }
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
